@@ -132,7 +132,7 @@ export default function Home() {
           <Collapsable key="4" title="Size">Size</Collapsable>
           
         </div>
-        <div className="w-[85%] flex flex-wrap  pl-4 pr-2 gap-5   pt-2 ">
+        <div className="w-[100%] md:w-[85%] flex flex-wrap  pl-4 pr-2 gap-5   pt-2 ">
           { products.map((product)=> <ProductCard key={product.id.toString()} size={235} product={product}/>)}
         </div>
       </div>

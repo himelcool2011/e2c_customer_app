@@ -41,7 +41,7 @@ export default function Collapsable({title, children}: CollapsableType){
                     
                 }}>{renderToggleButton()}</span>
             </h3>  
-            <section className="overflow-y-hidden transition-all duration-250 ease-in-out" style={{maxHeight:height}} >{children}</section>
+            <section className="overflow-y-hidden transition-all duration-250 " style={{maxHeight:height}} >{children}</section>
         </aside>
        
     )

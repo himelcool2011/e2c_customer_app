@@ -43,21 +43,25 @@ export default function ProductCard({ size,product }: ProductDetail) {
   }
 
   const getStyleOne = (size:any)=>{
-    return `bg-veil h-[${size}px] w-[${size}px] absolute right-0 top-0 opacity-0 cursor-pointer transition duration-250 group-hover/product:opacity-100`
+    return `bg-veil md:h-[235px] w-[168px] h-[168px] md:w-[235px] absolute right-0 top-0 opacity-0 cursor-pointer transition duration-250 group-hover/product:opacity-100`
   }
 
   const getQuickViewStyle = (size:any)=>{
 
-    return `bg-fade-black hover:bg-fade-black-hover transition duration-250 w-[${size}px] h-[48px] z-1 flex items-center justify-center text-white absolute right-0 bottom-0` 
+    return `bg-fade-black hover:bg-fade-black-hover transition duration-250 w-[168px] md:w-[235px] h-[48px] z-1 flex items-center justify-center text-white absolute right-0 bottom-0` 
   }
+
+ 
 
   return (
     <>
       <div className="product group/product mb-8 last:gap-x-0">
         <div className="border-1 border-gray-200 relative">
           {renderTag()}
-          <a href="#" className="">
-            <Image alt="p1" loading="eager" className="border-none" width={size} height={size} src={product?.url} />
+          <a href="#">
+            <div className="relative w-[168px] h-[168px] md:w-[235px] md:h-[235px]">
+            <Image alt="p1" loading="eager" className="border-none object-cover" fill  src={product?.url} />
+            </div>
           </a>
 
           <div className={getStyleOne(size)}>
