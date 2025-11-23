@@ -4,6 +4,9 @@ interface ModalState{
     show:boolean
 }
 
+/**
+ * Modal State initiailize
+ */
 const initialState : ModalState  = {
     show:false
 }
