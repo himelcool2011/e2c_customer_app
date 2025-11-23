@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
+import StoreProvider from "@/stores/store-provider";
 
 const roboto = Roboto({
   subsets: ["latin"]
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased`}
       >
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );
