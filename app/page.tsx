@@ -9,6 +9,7 @@ import Product from "@/interfaces/product";
 import MenuList from "@/components/menu";
 import Collapsable from "@/components/collapsable";
 import Category from "@/components/category";
+import Modal from "@/components/modal";
 
 
 
@@ -163,6 +164,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Modal title="Hello"><h3>Content Area</h3></Modal>
     </>
   );
 }
