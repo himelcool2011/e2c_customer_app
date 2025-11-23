@@ -79,8 +79,8 @@ export default function Home() {
 
   return (
     <>
-      
-      <div className="bg-header h-[84px]">
+      {/* Header section  */}
+      {/* <div className="bg-header h-[84px]">
         <div className="container md:mx-auto">
           <div className="flex items-center h-[84px] justify-between px-3 md:px-0 pt-2 pb-4">
             <div className="flex items-center">
@@ -102,7 +102,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* Header end */}
       {/* <div className="hidden md:block h-[55px] border-b-1 border-gray-100 ">
         <div className="container mx-auto flex items-center">
 
@@ -148,14 +149,16 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="bg-header md:h-[88px] pt-5 pb-5">
-        <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center text-left  md:justify-between">
-          <span className="text-white font-semibold ml-1 px-5 md:ml-0 md:px-0 text-md lg:text-md 2xl:text-2xl ">Sign Up to Newsletter</span>
+      <div className="bg-header  pt-5 pb-5">
+        <div className="container mx-auto flex flex-col lg:flex-row  items-start md:items-center text-left  ">
+          <div className="flex flex-col md:px-5 md:flex-row md:w-[100%] md:justify-between">
+          <span className="text-white font-semibold ml-1 px-5 md:ml-0 md:px-0  text-md md:text-lg lg:text-md 2xl:text-2xl ">Sign Up to Newsletter</span>
           <div className="text-white text-sm md:text-md lg:text-lg font-semibold mt-2 mb-2 ml-1 md:mb-0 md:mt-0 md:ml-0 px-5 md:px-0">
             <div className="font-light">Get all the latest information on Event, Sales and Offers.</div>
-            <div>Receive $10 coupon for first shopping.</div>
+            <div className="text-lg">Receive $10 coupon for first shopping.</div>
           </div>
-          <div className="mx-auto md:mx-0">
+          </div>
+          <div className="w-full px-4 mt-2">
             <SubscriptionInput />
           </div>
         </div>

@@ -8,9 +8,9 @@ export default function SearchBar() {
     const [options, setOptions] = useState(['All Categories','Music','Gifts','Electronics','Fashion','Trouses']);
     return (
         <>
-            <div className="flex items-center rounded-full bg-white  md:basis-142">
+            <div className="hidden md:block flex items-center rounded-full bg-white  md:basis-142">
                 <input name="search" type="text" placeholder="I am searching for..." className="caret-gray-500  text-gray-500 placeholder-gray-400 text-md p-1  outline-none ml-4 w-30 md:w-88" />
-                <div className="hidden md:block text-base/12 min-w-32 z-100   relative   pl-2 text-gray-500  border-x-1 border-gray-200 h-12 cursor-pointer">
+                <div className="hidden md:block text-base/12 min-w-32 z-10   relative   pl-2 text-gray-500  border-x-1 border-gray-200 h-12 cursor-pointer">
                     <span className="text-sm flex items-center h-[48px] justify-between pr-2 gap-x-0" onClick={() => setOpen(!open)}><span className="inline-block text-ellipsis overflow-hidden whitespace-nowrap w-30">{selected}</span> <ChevronDown size={12} className="inline" /></span>
                     {
                         open && (<div className="absolute -right-0.5 top-10 mt-2 w-32 bg-white border-t-1 border-gray-200   shadow-xl ">
