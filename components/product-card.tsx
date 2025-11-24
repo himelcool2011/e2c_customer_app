@@ -1,5 +1,7 @@
-
+'use client'
 import Product from "@/interfaces/product";
+import { useAppDispatch } from "@/stores/hook";
+import { show } from "@/stores/slices/modal-slice";
 import { ShoppingBasket } from "lucide-react";
 import Image from "next/image";
 
@@ -51,7 +53,10 @@ export default function ProductCard({ size,product }: ProductDetail) {
     return `bg-fade-black hover:bg-fade-black-hover transition duration-250 w-[168px] md:w-[235px] h-[48px] z-1 flex items-center justify-center text-white absolute right-0 bottom-0` 
   }
 
- 
+  const dispatch =  useAppDispatch()
+  const openModal = ()=>{
+    dispatch(show())
+  }
 
   return (
     <>
@@ -78,7 +83,7 @@ export default function ProductCard({ size,product }: ProductDetail) {
 
               <div className="bg-white text-black transition duration-200 group-hover/addtocart:bg-fade-black group-hover/addtocart:text-white w-10 h-10 rounded-full flex items-center justify-center"><ShoppingBasket /></div>
             </a>
-            <div className={getQuickViewStyle(size)}>QUICK VIEW</div>
+            <div className={getQuickViewStyle(size)} onClick={()=>openModal()}>QUICK VIEW</div>
           </div>
         </div>
         <div className="pt-2 ">

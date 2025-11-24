@@ -30,29 +30,6 @@
   }
 }
 
-/* @utility container{
-  width: 100%;
-  margin-left:auto;
-  margin-right:auto;
-
-  
-  @variant 2xl{
-    min-width: 1400px;
-  }
-  @variant xl{
-    min-width: 1220px;
-  }
-  @variant lg{
-    min-width: 992px;
-  }
-   @variant md{
-    min-width: 768px;
-  }
-   @variant sm{
-    min-width: 576px;
-  }
-  
-} */
 
 body {
   background: var(--background);
