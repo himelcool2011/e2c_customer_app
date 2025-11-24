@@ -3,79 +3,81 @@ import ProductCard from "@/components/product-card";
 import SearchBar from "@/components/search-bar";
 import SubscriptionInput from "@/components/subscription-input";
 import TopMenu from "@/components/top-menu";
-import { UserRound, HeartIcon, ShoppingCart, ChevronDown, Menu, ShoppingBasket, Minus } from "lucide-react";
+import {
+  UserRound,
+  HeartIcon,
+  ShoppingCart,
+  ChevronDown,
+  Menu,
+  ShoppingBasket,
+  Minus,
+} from "lucide-react";
 import Image from "next/image";
 import Product from "@/interfaces/product";
 import MenuList from "@/components/menu";
 import Collapsable from "@/components/collapsable";
 import Category from "@/components/category";
-
-
+import SubscriptionBanner from "@/components/subscription-banner";
+import CategoryBanner from "@/components/category-banner";
+import TopCategory from "@/components/top-category";
 
 export default function Home() {
-
-
-  const products:Product[]=[
-    
+  const products: Product[] = [
     {
-      id:1,
-      url: 'https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/02/shop22_product15.jpg',
-      name: 'Laptop Stand',
-      tags:['ACCESSORIES'],
-      price: [110,120],
-      currency:'$',
-      discount:0
+      id: 1,
+      url: "https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/02/shop22_product15.jpg",
+      name: "Laptop Stand",
+      tags: ["ACCESSORIES"],
+      price: [110, 120],
+      currency: "$",
+      discount: 0,
     },
     {
-      id:2,
-      url: 'https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2013/06/shop22_product1.jpg',
-      name: 'Smart Watch',
-      tags:['SMART WATCH','WRIST WATCH'],
+      id: 2,
+      url: "https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2013/06/shop22_product1.jpg",
+      name: "Smart Watch",
+      tags: ["SMART WATCH", "WRIST WATCH"],
       price: [220],
-      currency:'$',
-      discount:50
+      currency: "$",
+      discount: 50,
     },
     {
-      id:3,
-      url: 'https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2019/06/shop22_product21.jpg',
-      name: 'Camera Go Pro',
-      tags:['CAMERA','GO PRO'],
-      price: [320,450],
-      currency:'$',
-      discount:0
+      id: 3,
+      url: "https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2019/06/shop22_product21.jpg",
+      name: "Camera Go Pro",
+      tags: ["CAMERA", "GO PRO"],
+      price: [320, 450],
+      currency: "$",
+      discount: 0,
     },
     {
-      id:4,
-      url: 'https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/06/shop22_product6.jpg',
-      name: 'HD Camera',
-      tags:['HD CAMERA','CAMERA'],
+      id: 4,
+      url: "https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/06/shop22_product6.jpg",
+      name: "HD Camera",
+      tags: ["HD CAMERA", "CAMERA"],
       price: [320],
-      currency:'$',
-      discount:30
+      currency: "$",
+      discount: 30,
     },
     {
-      id:5,
-      url: 'https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/02/shop22_product11.jpg',
-      name: 'Battery Charger',
-      tags:['CAMERA ACCESSORIES','ACCESSORIES'],
+      id: 5,
+      url: "https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/02/shop22_product11.jpg",
+      name: "Battery Charger",
+      tags: ["CAMERA ACCESSORIES", "ACCESSORIES"],
       price: [120],
-      currency:'$',
-      discount:0
+      currency: "$",
+      discount: 0,
     },
     {
-      id:6,
-      url: 'https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/02/shop22_product11.jpg',
-      name: 'Battery Charger',
-      tags:['CAMERA ACCESSORIES','ACCESSORIES'],
+      id: 6,
+      url: "https://www.portotheme.com/wordpress/porto/shop22-wcfm/wp-content/uploads/sites/207/2018/02/shop22_product11.jpg",
+      name: "Battery Charger",
+      tags: ["CAMERA ACCESSORIES", "ACCESSORIES"],
       price: [90],
-      currency:'$',
-      discount:0
-    }
-    
-  ]
-
-  
-
+      currency: "$",
+      discount: 0,
+    },
+  ];
 
   return (
     <>
@@ -113,14 +115,16 @@ export default function Home() {
           <TopMenu />
         </div>
       </div> */}
-      <Breadcrumb/>
+      <Breadcrumb />
       <div className="container mx-auto flex mb-2">
-        <div className="hidden lg:block w-[15%] pr-5 border-r-1 border-gray-200">
-          <Collapsable key="1" title="Categories"><Category/></Collapsable>
+        <div className="hidden lg:block w-[15%] pr-5 border-r border-gray-200">
+          <Collapsable key="1" title="Categories">
+            <Category />
+          </Collapsable>
           {/* <aside className="pb-4 mb-2 border-b-1 border-gray-200"> */}
-            {/* <h3 className="flex h-[30px] text-base/8  justify-between font-bold text-fade-black"><span >Categories </span><span><Minus className="inline"/></span></h3>   */}
-            {/* <Sidebar/> */}
-            {/* <ul className="mt-2 text-sm text-gray-400 font-semibold">
+          {/* <h3 className="flex h-[30px] text-base/8  justify-between font-bold text-fade-black"><span >Categories </span><span><Minus className="inline"/></span></h3>   */}
+          {/* <Sidebar/> */}
+          {/* <ul className="mt-2 text-sm text-gray-400 font-semibold">
               <li className="py-2" ><a className="hover:text-gray-700 transition duration-150" href="#">Electorinics</a> <span>(10)</span></li>
               <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Fashion</a> <span>(14)</span></li>
               <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Gifts</a> <span>(20)</span></li>
@@ -128,13 +132,24 @@ export default function Home() {
               <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Trousers</a> <span>(12)</span></li>
             </ul> */}
           {/* </aside> */}
-          <Collapsable key="2" title="Price">Prices</Collapsable>
-          <Collapsable key="3" title="Color">Color</Collapsable>
-          <Collapsable key="4" title="Size">Size</Collapsable>
-          
+          <Collapsable key="2" title="Price">
+            Prices
+          </Collapsable>
+          <Collapsable key="3" title="Color">
+            Color
+          </Collapsable>
+          <Collapsable key="4" title="Size">
+            Size
+          </Collapsable>
         </div>
-        <div className="w-[100%] md:w-[85%] flex flex-wrap  pl-4 pr-2 gap-5   pt-2 ">
-          { products.map((product)=> <ProductCard key={product.id.toString()} size={235} product={product}/>)}
+        <div className="w-full md:w-[85%] flex flex-wrap  pl-4 pr-2 gap-5   pt-2 ">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id.toString()}
+              size={235}
+              product={product}
+            />
+          ))}
         </div>
       </div>
 
@@ -148,21 +163,9 @@ export default function Home() {
           <SubscriptionInput />
         </div>
       </div> */}
-
-      <div className="bg-header  pt-5 pb-5">
-        <div className="container mx-auto flex flex-col lg:flex-row  items-start md:items-center text-left  ">
-          <div className="flex flex-col md:px-5 md:flex-row md:w-[100%] md:justify-between">
-          <span className="text-white font-semibold ml-1 px-5 md:ml-0 md:px-0  text-md md:text-lg lg:text-md 2xl:text-2xl ">Sign Up to Newsletter</span>
-          <div className="text-white text-sm md:text-md lg:text-lg font-semibold mt-2 mb-2 ml-1 md:mb-0 md:mt-0 md:ml-0 px-5 md:px-0">
-            <div className="font-light">Get all the latest information on Event, Sales and Offers.</div>
-            <div className="text-lg">Receive $10 coupon for first shopping.</div>
-          </div>
-          </div>
-          <div className="w-full px-4 mt-2">
-            <SubscriptionInput />
-          </div>
-        </div>
-      </div>
+      <TopCategory />
+      <CategoryBanner />
+      <SubscriptionBanner />
     </>
   );
 }
