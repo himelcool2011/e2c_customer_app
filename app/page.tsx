@@ -19,10 +19,10 @@ import Collapsable from "@/components/collapsable";
 import Category from "@/components/category";
 import Modal from "@/components/modal";
 
-
 import SubscriptionBanner from "@/components/subscription-banner";
 import CategoryBanner from "@/components/category-banner";
 import TopCategory from "@/components/top-category";
+import Header from "@/components/header";
 
 export default function Home() {
   const products: Product[] = [
@@ -84,31 +84,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Header section  */}
-      {/* <div className="bg-header h-[84px]">
-        <div className="container md:mx-auto">
-          <div className="flex items-center h-[84px] justify-between px-3 md:px-0 pt-2 pb-4">
-            <div className="flex items-center">
-              <Menu className="block md:hidden inline text-white mr-2"/>
-              <span className="text-white text-2xl font-semibold">e2c</span>
-            </div>
-            <SearchBar />
-            <div className="flex items-center md:justify-end  md:w-60 gap-x-1 md:gap-x-3 ">
-              <span className=" text-white text-md font-semibold ">
-                <UserRound className="hidden md:block rounded-full border-1 p-2 border-white w-12 h-12" />
-                <UserRound className=" md:hidden  md:p-2 w-8 h-8 md:w-12 md:h-12" />
-                </span>
-              <div className="hidden md:block text-white text-md font-semibold">
-                <div className="font-light">Hello!</div>
-                <div>My Account</div>
-              </div>
-              <span  className=""><HeartIcon className="text-white w-8 h-8" /></span>
-              <span><ShoppingCart className="text-white w-8 h-8" /></span>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* Header end */}
+      <Header />
+
       {/* <div className="hidden md:block h-[55px] border-b-1 border-gray-100 ">
         <div className="container mx-auto flex items-center">
 
@@ -156,35 +133,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div className="bg-header h-[88px] pt-5 pb-5">
-        <div className="container mx-auto flex items-center justify-between">
-          <span className="text-white font-semibold text-md lg:text-md 2xl:text-2xl ">Sign Up to Newsletter</span>
-          <div className="text-white text-md font-semibold">
-            <div className="font-light">Get all the latest information on Event, Sales and Offers.</div>
-            <div>Receive $10 coupon for first shopping.</div>
-          </div>
-          <SubscriptionInput />
-        </div>
-      </div> */}
-
-      <div className="bg-header  pt-5 pb-5">
-        <div className="container mx-auto flex flex-col lg:flex-row  items-start md:items-center text-left  ">
-          <div className="flex flex-col md:px-5 md:flex-row md:w-[100%] md:justify-between">
-          <span className="text-white font-semibold ml-1 px-5 md:ml-0 md:px-0  text-md md:text-lg lg:text-md 2xl:text-2xl ">Sign Up to Newsletter</span>
-          <div className="text-white text-sm md:text-md lg:text-lg font-semibold mt-2 mb-2 ml-1 md:mb-0 md:mt-0 md:ml-0 px-5 md:px-0">
-            <div className="font-light">Get all the latest information on Event, Sales and Offers.</div>
-            <div className="text-lg">Receive $10 coupon for first shopping.</div>
-          </div>
-          </div>
-          <div className="w-full px-4 mt-2">
-            <SubscriptionInput />
-          </div>
-        </div>
-      </div>
-      <Modal title="Hello"><h3>Content Area</h3></Modal>
       <TopCategory />
       <CategoryBanner />
       <SubscriptionBanner />
+      <Modal title="Hello">
+        <h3>Content Area</h3>
+      </Modal>
     </>
   );
 }

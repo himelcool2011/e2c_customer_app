@@ -44,11 +44,12 @@ const CategoryItem = ({ IconComponent, label }) => {
     // Outer div for the entire category item, handles the text hover color
     <div className="flex flex-col items-center shrink-0 group hover:text-[#01abec] cursor-pointer">
       {/* Circle Container: w/h define size, bg color, and hover bg color */}
-      <div className="flex items-center justify-center w-full p-6 bg-[#f4f4f4] rounded-full group-hover:bg-[#01abec] transition-colors duration-300">
+      <div className="flex items-center justify-center w-full lg:h-30 lg:w-30  p-6 bg-[#f4f4f4] rounded-full group-hover:bg-[#01abec] transition-colors duration-300">
         {/* Icon Component: Size and default color (which changes due to the group-hover) */}
         <IconComponent
           className="text-3xl text-gray-700 group-hover:text-white transition-colors duration-300"
           weight="regular"
+          size={32}
         />
       </div>
 
@@ -64,7 +65,7 @@ const CategoryItem = ({ IconComponent, label }) => {
 export default function TopCategory() {
   return (
     <>
-      <div className="flex flex-col p-10">
+      <div className="container flex flex-col p-10">
         <div className="text-lg font-bold pb-2">
           <h1>Top Categories</h1>
         </div>
