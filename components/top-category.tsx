@@ -1,38 +1,45 @@
-"use client";
-
-import React from "react";
+// import {
+//   Gauge, // 1. (Kept)
+//   Gift, // 2. (Kept)
+//   Microphone, // 3. (Kept)
+//   Car, // 4. (Kept)
+//   House, // 5. (New: Home/Dashboard)
+//   User, // 6. (New: Profile/Account)
+//   ShoppingCart, // 7. (New: Cart/E-commerce)
+//   Gear,
+//   TShirt,
+//   Television,
+//   Laptop,
+//   Tree, // 8. (New: Settings)
+// } from "phosphor-react";
 
 import {
-  Gauge, // 1. (Kept)
-  Gift, // 2. (Kept)
-  Microphone, // 3. (Kept)
-  Car, // 4. (Kept)
-  House, // 5. (New: Home/Dashboard)
-  User, // 6. (New: Profile/Account)
-  ShoppingCart, // 7. (New: Cart/E-commerce)
-  Gear,
-  TShirt,
-  Television,
+  Gauge,
+  Gift,
+  Mic,
+  Car,
+  Home,
+  User,
+  ShoppingCart,
+  Settings,
+  Shirt,
+  Tv,
   Laptop,
-  Tree, // 8. (New: Settings)
-} from "phosphor-react";
+  Trees,
+} from "lucide-react";
 
 const categories = [
-  { Icon: TShirt, label: "Fashion" },
-  { Icon: Television, label: "Electronics" },
+  { Icon: Shirt, label: "Fashion" },
+  { Icon: Laptop, label: "Electronics" },
   { Icon: Gift, label: "Gifts" },
-  { Icon: Tree, label: "Garden" },
-  { Icon: Microphone, label: "Music" },
+  { Icon: Trees, label: "Garden" },
+  { Icon: Mic, label: "Music" },
   { Icon: Car, label: "Motors" },
-  { Icon: House, label: "Furniture" },
+  { Icon: Home, label: "Furniture" },
 ];
 
 // --- Reusable Category Item Component ---
 const CategoryItem = ({ IconComponent, label }) => {
-  // NOTE: I've corrected the classes to achieve a perfect circle and clean hover effects:
-  // 1. Used w-24 h-24 instead of the p-4 m-2 + text-8xl combo.
-  // 2. Used text-xl for the icon color, controlled by the parent text color.
-
   return (
     // Outer div for the entire category item, handles the text hover color
     <div className="flex flex-col items-center shrink-0 group hover:text-[#01abec] cursor-pointer">
