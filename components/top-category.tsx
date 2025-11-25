@@ -70,7 +70,7 @@ export default function TopCategory() {
           <h1>Top Categories</h1>
         </div>
 
-        <div className="w-full h-px bg-gray-300"></div>
+        <div className="w-full h-px  bg-gray-300"></div>
 
         {/* The Scrollable Container */}
         <div className="flex flex-row gap-20 p-4 w-full cursor-pointer overflow-x-auto whitespace-nowrap scrollbar-hide px-4 touch-pan-x">
