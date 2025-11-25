@@ -1,6 +1,6 @@
 export default function CategoryBanner() {
   return (
-    <>
+    <div className="container mx-auto">
       <div
         className="flex flex-col bg-[#f4f4f4] m-5
   md:flex-row md:p-4 md:mx-auto md:justify-center md:items-center
@@ -48,6 +48,6 @@ export default function CategoryBanner() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
