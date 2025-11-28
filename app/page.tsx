@@ -24,6 +24,9 @@ import CategoryBanner from "@/components/category-banner";
 import TopCategory from "@/components/top-category";
 import Header from "@/components/header";
 import SortBy from "@/components/sort-by";
+import ShowPageNumbers from "@/components/show-page-numbers";
+import ShowGridBtn from "@/components/button/show-grid-btn";
+import ShowListBtn from "@/components/button/show-list-btn";
 
 export default function Home() {
   const products: Product[] = [
@@ -124,10 +127,14 @@ export default function Home() {
           </Collapsable>
         </div>
         
-        <div className="w-full md:w-[85%] flex flex-wrap  pl-4 gap-5   ">
+        <div className="w-full md:w-[85%] flex flex-wrap  pl-4 gap-5  lg:gap-6.5 ">
           <CategoryBanner />
-          <div className=" w-full">
-            <SortBy/>
+          <div className=" w-full flex justify-between">
+            <SortBy />
+            <div className="flex"> <ShowPageNumbers />
+              <ShowGridBtn/>
+              <ShowListBtn/>
+            </div>
           </div>
           {products.map((product) => (
             <ProductCard
@@ -136,6 +143,12 @@ export default function Home() {
               product={product}
             />
           ))}
+          <div className=" w-full ">
+
+            <div className="flex justify-between"> 
+              <ShowPageNumbers />
+            </div>
+          </div>
         </div>
       </div>
 
