@@ -2,9 +2,9 @@ export default function CategoryBanner() {
   return (
     <>
       <div
-        className="flex flex-col bg-[#f4f4f4] m-5
-  md:flex-row md:p-4 md:mx-auto md:justify-center md:items-center
-  lg:p-4 lg:mx-auto lg:justify-center lg:items-center
+        className="flex flex-col bg-[#f4f4f4] 
+  md:flex-row  md:justify-center md:items-center
+   lg:justify-center lg:items-center w-full
   items-center"
       >
         <div className="flex flex-col px-2 py-4 md:text-right">

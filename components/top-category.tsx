@@ -64,8 +64,8 @@ const CategoryItem = ({ IconComponent, label }) => {
 // --- Main Component ---
 export default function TopCategory() {
   return (
-    <>
-      <div className="container flex flex-col p-10">
+    <div className="container mx-auto">
+      <div className=" flex flex-col">
         <div className="text-lg font-bold pb-2">
           <h1>Top Categories</h1>
         </div>
@@ -84,6 +84,7 @@ export default function TopCategory() {
           ))}
         </div>
       </div>
-    </>
+      </div>
+    
   );
 }

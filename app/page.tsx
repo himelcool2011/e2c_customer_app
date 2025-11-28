@@ -123,7 +123,9 @@ export default function Home() {
             Size
           </Collapsable>
         </div>
+        
         <div className="w-full md:w-[85%] flex flex-wrap  pl-4 gap-5   ">
+          <CategoryBanner />
           <div className=" w-full">
             <SortBy/>
           </div>
@@ -138,7 +140,7 @@ export default function Home() {
       </div>
 
       <TopCategory />
-      <CategoryBanner />
+      
       <SubscriptionBanner />
       <Modal title="Hello">
         <h3>Content Area</h3>
