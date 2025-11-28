@@ -23,6 +23,7 @@ import SubscriptionBanner from "@/components/subscription-banner";
 import CategoryBanner from "@/components/category-banner";
 import TopCategory from "@/components/top-category";
 import Header from "@/components/header";
+import SortBy from "@/components/sort-by";
 
 export default function Home() {
   const products: Product[] = [
@@ -122,7 +123,10 @@ export default function Home() {
             Size
           </Collapsable>
         </div>
-        <div className="w-full md:w-[85%] flex flex-wrap  pl-4 pr-2 gap-5   pt-2 ">
+        <div className="w-full md:w-[85%] flex flex-wrap  pl-4 gap-5   ">
+          <div className=" w-full">
+            <SortBy/>
+          </div>
           {products.map((product) => (
             <ProductCard
               key={product.id.toString()}
