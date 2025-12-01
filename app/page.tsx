@@ -11,8 +11,13 @@ import {
   Menu,
   ShoppingBasket,
   Minus,
+  Grid,
+  ListIcon,
+  Grid3x3,
+  LayoutGrid,
+  LayoutList,
 } from "lucide-react";
-import Image from "next/image";
+
 import Product from "@/interfaces/product";
 import MenuList from "@/components/menu";
 import Collapsable from "@/components/collapsable";
@@ -27,6 +32,9 @@ import SortBy from "@/components/sort-by";
 import ShowPageNumbers from "@/components/show-page-numbers";
 import ShowGridBtn from "@/components/button/show-grid-btn";
 import ShowListBtn from "@/components/button/show-list-btn";
+import PageBtn from "@/components/button/page-btn";
+import Paginator from "@/components/paginator";
+import CartItem from "@/components/shopping-cart/cart-item";
 
 export default function Home() {
   const products: Product[] = [
@@ -36,6 +44,7 @@ export default function Home() {
       name: "Laptop Stand",
       tags: ["ACCESSORIES"],
       price: [110, 120],
+      vendor: "Vendor1",
       currency: "$",
       discount: 0,
     },
@@ -47,6 +56,7 @@ export default function Home() {
       price: [220],
       currency: "$",
       discount: 50,
+      vendor: "Vendor2",
     },
     {
       id: 3,
@@ -56,6 +66,7 @@ export default function Home() {
       price: [320, 450],
       currency: "$",
       discount: 0,
+      vendor: "Vendor3",
     },
     {
       id: 4,
@@ -65,6 +76,7 @@ export default function Home() {
       price: [320],
       currency: "$",
       discount: 30,
+      vendor: "Vendor4",
     },
     {
       id: 5,
@@ -74,6 +86,7 @@ export default function Home() {
       price: [120],
       currency: "$",
       discount: 0,
+      vendor: "Vendor5",
     },
     {
       id: 6,
@@ -83,6 +96,7 @@ export default function Home() {
       price: [90],
       currency: "$",
       discount: 0,
+      vendor: "Vendor6",
     },
   ];
 
@@ -90,7 +104,7 @@ export default function Home() {
     <>
       <Header />
 
-      {/* <div className="hidden md:block h-[55px] border-b-1 border-gray-100 ">
+      <div className="hidden md:block h-[55px] border-b-1 border-gray-100 ">
         <div className="container mx-auto flex items-center">
 
           <div className="w-[24.75%]  pl-4 pt-4.5 pb-4.5 flex items-center bg-fade-black text-sm text-white font-bold cursor-pointer">
@@ -98,24 +112,14 @@ export default function Home() {
           </div>
           <TopMenu />
         </div>
-      </div> */}
+      </div>
       <Breadcrumb />
       <div className="container mx-auto flex mb-2">
         <div className="hidden lg:block w-[15%] pr-5 border-r border-gray-200">
           <Collapsable key="1" title="Categories">
             <Category />
           </Collapsable>
-          {/* <aside className="pb-4 mb-2 border-b-1 border-gray-200"> */}
-          {/* <h3 className="flex h-[30px] text-base/8  justify-between font-bold text-fade-black"><span >Categories </span><span><Minus className="inline"/></span></h3>   */}
-          {/* <Sidebar/> */}
-          {/* <ul className="mt-2 text-sm text-gray-400 font-semibold">
-              <li className="py-2" ><a className="hover:text-gray-700 transition duration-150" href="#">Electorinics</a> <span>(10)</span></li>
-              <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Fashion</a> <span>(14)</span></li>
-              <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Gifts</a> <span>(20)</span></li>
-              <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Music</a> <span>(15)</span></li>
-              <li className="py-2"><a className="hover:text-gray-700 transition duration-150" href="#">Trousers</a> <span>(12)</span></li>
-            </ul> */}
-          {/* </aside> */}
+
           <Collapsable key="2" title="Price">
             Prices
           </Collapsable>
@@ -126,7 +130,7 @@ export default function Home() {
             Size
           </Collapsable>
         </div>
-        
+
         <div className="w-full md:w-[85%] flex flex-wrap  pl-4 gap-5  lg:gap-6.5 ">
           <CategoryBanner />
           <div className=" w-full flex justify-between">
@@ -145,19 +149,47 @@ export default function Home() {
           ))}
           <div className=" w-full ">
 
-            <div className="flex justify-between"> 
+            <div className="flex justify-between">
               <ShowPageNumbers />
+              <Paginator />
             </div>
           </div>
         </div>
       </div>
 
       <TopCategory />
-      
+
       <SubscriptionBanner />
       <Modal title="Hello">
         <h3>Content Area</h3>
       </Modal>
+      <div className="fixed bg-veil backdrop-blur-sm z-15 block w-full h-full top-0 left-0 ">
+        <div className="fixed z-16 bg-white h-full w-[90%] md:w-80 top-0 right-0  px-5 py-7 opacity-100">
+          <div className="flex justify-between font-bold mb-3">
+            <span>0 ITEMS</span>
+            <a href="#">VIEW CART</a>
+          </div>
+          <div className="h-[86%] md:h-[80%] scrollbar xl:h-[80%] 2xl:h-[85%] border-t border-b border-gray-200 block overflow-x-hidden overflow-y-auto">
+            <CartItem product={products[0]}/>
+            <CartItem product={products[1]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+            <CartItem product={products[2]}/>
+          
+          </div>
+          <div className="flex justify-between mt-3 mb-4 font-bold">
+            <span>SUB TOTAL:</span>
+            <span>1000.00</span>
+          </div>
+          <div className="bg-fade-black p-3 text-center hover:bg-fade-black-hover transition duration-250  text-white " >CHECKOUT</div>
+        </div>
+      </div>
     </>
   );
 }
