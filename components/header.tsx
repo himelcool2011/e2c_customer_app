@@ -1,7 +1,17 @@
+'use client'
 import { HeartIcon, Menu, ShoppingCart, UserRound } from "lucide-react";
 import SearchBar from "./search-bar";
+import { useAppDispatch } from "@/stores/hook";
+import { showCart } from "@/stores/slices/cart-slice";
 
 export default function Header() {
+
+  const dispatch = useAppDispatch();
+
+  const handleClickOnShoppingCart = ()=>{
+    dispatch(showCart())
+  }
+
   return (
     <div className="bg-header h-[84px]">
       <div className="container md:mx-auto">
@@ -24,7 +34,7 @@ export default function Header() {
               <HeartIcon className="text-white w-8 h-8" />
             </span>
             <span>
-              <ShoppingCart className="text-white w-8 h-8" />
+              <button type="button" onClick={()=>handleClickOnShoppingCart()}><ShoppingCart className="text-white w-8 h-8"  /></button>
             </span>
           </div>
         </div>
