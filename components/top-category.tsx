@@ -38,8 +38,13 @@ const categories = [
   { Icon: Home, label: "Furniture" },
 ];
 
+type CategoryItemDef  = {
+  IconComponent: any,
+  label: string
+}
+
 // --- Reusable Category Item Component ---
-const CategoryItem = ({ IconComponent, label }) => {
+const CategoryItem = ({ IconComponent, label }:CategoryItemDef) => {
   return (
     // Outer div for the entire category item, handles the text hover color
     <div className="flex flex-col items-center shrink-0 group hover:text-[#01abec] cursor-pointer">
