@@ -1,13 +1,11 @@
+import { CartInitState } from "@/interfaces/cart-init-state";
 import { createSlice } from "@reduxjs/toolkit";
 
-interface CartInitState{
-    show:boolean,
-    items:[]
-}
+
 
 const initialState:CartInitState = {
     show:false,
-    items:[]
+    items:[],
 }
 
 export const cartSlice = createSlice({
@@ -19,9 +17,22 @@ export const cartSlice = createSlice({
         },
         closeCart: (state)=>{
             state.show = false
+        },
+        addToCart: (state,action)=>{
+            const item = state.items.find(itm=>itm.id==action.payload.id)
+            if(!item){
+                action.payload['qty']=1;
+                state.items.push(action.payload)
+            }else{
+                item.qty++;
+            }
+        },
+        calculate:(state)=>{
         }
-    }
+
+        
+    },
 })
 
-export const {showCart, closeCart} = cartSlice.actions;
+export const {showCart, closeCart,addToCart,calculate} = cartSlice.actions;
 export default cartSlice.reducer;

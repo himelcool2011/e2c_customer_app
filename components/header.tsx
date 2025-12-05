@@ -34,7 +34,7 @@ export default function Header() {
               <HeartIcon className="text-white w-8 h-8" />
             </span>
             <span>
-              <button type="button" onClick={()=>handleClickOnShoppingCart()}><ShoppingCart className="text-white w-8 h-8"  /></button>
+              <button className="cursor-pointer" type="button" onClick={()=>handleClickOnShoppingCart()}><ShoppingCart className="text-white w-8 h-8"  /></button>
             </span>
           </div>
         </div>

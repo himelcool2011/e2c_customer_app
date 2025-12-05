@@ -48,6 +48,7 @@ export default function Home() {
       vendor: "Vendor1",
       currency: "$",
       discount: 0,
+      qty:0
     },
     {
       id: 2,
@@ -58,6 +59,7 @@ export default function Home() {
       currency: "$",
       discount: 50,
       vendor: "Vendor2",
+      qty:0
     },
     {
       id: 3,
@@ -68,6 +70,7 @@ export default function Home() {
       currency: "$",
       discount: 0,
       vendor: "Vendor3",
+      qty:0
     },
     {
       id: 4,
@@ -78,6 +81,7 @@ export default function Home() {
       currency: "$",
       discount: 30,
       vendor: "Vendor4",
+      qty:0
     },
     {
       id: 5,
@@ -88,6 +92,7 @@ export default function Home() {
       currency: "$",
       discount: 0,
       vendor: "Vendor5",
+      qty:0
     },
     {
       id: 6,
@@ -97,7 +102,7 @@ export default function Home() {
       price: [90],
       currency: "$",
       discount: 0,
-      vendor: "Vendor6",
+      vendor: "Vendor6",qty:0
     },
   ];
 
@@ -163,7 +168,7 @@ export default function Home() {
       <Modal title="Hello">
         <h3>Content Area</h3>
       </Modal>
-      <CartSideView products={products}/>
+      <CartSideView />
     </>
   );
 }

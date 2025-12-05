@@ -6,5 +6,6 @@ export default interface Product {
   price: number[],
   currency: string,
   discount: number,
-  vendor: string
+  vendor: string,
+  qty:0
 }

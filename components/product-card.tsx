@@ -1,8 +1,9 @@
 'use client'
 import Product from "@/interfaces/product";
 import { useAppDispatch } from "@/stores/hook";
+import { addToCart, calculate } from "@/stores/slices/cart-slice";
 import { show } from "@/stores/slices/modal-slice";
-import { ShoppingBasket } from "lucide-react";
+import { ArrowUpRightFromSquare, ShoppingBasket } from "lucide-react";
 import Image from "next/image";
 
 type ProductDetail = {
@@ -10,6 +11,7 @@ type ProductDetail = {
   product: Product
 }
 export default function ProductCard({ size,product }: ProductDetail) {
+
 
   const toPrice = product.price.length > 1 ? product.price[1] : product.price[0];
   const fromPrice = product.price.length > 1 ? product.price[0] : toPrice;
@@ -20,7 +22,7 @@ export default function ProductCard({ size,product }: ProductDetail) {
 
   const renderPrice = () => {
     if (discountPrice) {
-      return (<div className="text-lg font-bold"><span className="text-gray-400 line-through">{currencySymbol}{toPrice}</span> - {currencySymbol}{toPrice-discountPrice}</div>)
+      return (<div className="text-lg font-bold"><span className="text-gray-400 line-through">{currencySymbol}{toPrice}</span>  {currencySymbol}{toPrice-discountPrice}</div>)
     } else {
       if (fromPrice < toPrice) {
         return (<div className="text-lg font-bold">{currencySymbol}{fromPrice} - {currencySymbol}{toPrice}</div>)
@@ -58,6 +60,11 @@ export default function ProductCard({ size,product }: ProductDetail) {
     dispatch(show())
   }
 
+
+  const handleAddToCart= (product:Product)=>{
+    dispatch(addToCart(product))
+  }
+
   return (
     <>
       <div className="product group/product mb-8 last:gap-x-0">
@@ -70,7 +77,7 @@ export default function ProductCard({ size,product }: ProductDetail) {
           </a>
 
           <div className={getStyleOne(size)}>
-            <a href="#" className="absolute group/addtocart right-4 top-4">
+            <div className="absolute group/addtocart right-4 top-4">
 
               <span
                 className="absolute left-1/2 -translate-x-1/2 mb-2 bottom-full w-max max-w-xs px-3 py-2 text-xs text-white bg-fade-black opacity-0 group-hover/addtocart:opacity-100 transition-opacity duration-350"
@@ -81,8 +88,13 @@ export default function ProductCard({ size,product }: ProductDetail) {
                 ></div>
               </span>
 
-              <div className="bg-white text-black transition duration-200 group-hover/addtocart:bg-fade-black group-hover/addtocart:text-white w-10 h-10 rounded-full flex items-center justify-center"><ShoppingBasket /></div>
-            </a>
+              <div className="bg-white text-black transition duration-200 group-hover/addtocart:bg-fade-black group-hover/addtocart:text-white w-10 h-10 rounded-full flex items-center justify-center">
+              { !(product.price.length > 1)?
+              <button type="button" className="cursor-pointer p-5"  onClick={()=>{handleAddToCart(product)}}><ShoppingBasket /></button>
+                :
+                <a href="#"><ArrowUpRightFromSquare/></a>
+            }</div>
+            </div>
             <div className={getQuickViewStyle(size)} onClick={()=>openModal()}>QUICK VIEW</div>
           </div>
         </div>
