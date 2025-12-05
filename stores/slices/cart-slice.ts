@@ -6,6 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState:CartInitState = {
     show:false,
     items:[],
+    subTotal:0
 }
 
 export const cartSlice = createSlice({
@@ -28,6 +29,10 @@ export const cartSlice = createSlice({
             }
         },
         calculate:(state)=>{
+state.subTotal=0;
+            state.items.forEach(itm=>{
+                state.subTotal += (itm.qty*itm.price[0]);
+            })
         }
 
         

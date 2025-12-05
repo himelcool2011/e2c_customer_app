@@ -7,7 +7,7 @@ export default function CartItem({product}:any){
                   <h3>{product.name}</h3>
                   <span>Store: {product.vendor}</span>
                 </div>
-                <span>1 x ${product.price[0].toFixed(2)}</span>
+                <span>{product.qty} x ${product.price[0].toFixed(2)}</span>
               </div>
               <div>
                 <Image alt="" width={80} height={80} src={product.url} />

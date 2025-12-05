@@ -63,6 +63,7 @@ export default function ProductCard({ size,product }: ProductDetail) {
 
   const handleAddToCart= (product:Product)=>{
     dispatch(addToCart(product))
+    dispatch(calculate())
   }
 
   return (
